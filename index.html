@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SDWA Driving School | Calm Driving Lessons in London</title>
+  <meta name="description" content="SDWA Driving School offers calm, patient and confidence-building manual driving lessons across East London for beginners, nervous learners and test-ready students." />
+
+  <style>
+    :root {
+      --bg: #f7f1e8;
+      --paper: #fffaf2;
+      --ink: #17120e;
+      --muted: #6f6257;
+      --line: rgba(23, 18, 14, 0.14);
+      --brown: #8a5a35;
+      --brown-dark: #5a371f;
+      --cream: #ead8c1;
+      --sage: #7f9073;
+      --green: #405744;
+      --shadow: 0 24px 70px rgba(42, 27, 15, 0.16);
+      --soft-shadow: 0 18px 44px rgba(42, 27, 15, 0.10);
+      --radius-lg: 34px;
+      --radius-md: 22px;
+      --radius-sm: 14px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body.lock {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .site-shell {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.08;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(0,0,0,.18) 0 1px, transparent 1px),
+        radial-gradient(circle at 70% 60%, rgba(0,0,0,.14) 0 1px, transparent 1px);
+      background-size: 18px 18px, 31px 31px;
+      mix-blend-mode: multiply;
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 241, 232, 0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .navbar {
+      max-width: var(--max);
+      margin: auto;
+      min-height: 78px;
+      padding: 0 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 26px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-width: 0;
+      z-index: 120;
+    }
+
+    .logo-image img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      flex: 0 0 auto;
+    }
+
+    .brand-text {
+      display: grid;
+      line-height: 1.05;
+    }
+
+    .brand-text strong {
+      font-size: 18px;
+      letter-spacing: -0.5px;
+      white-space: nowrap;
+    }
+
+    .brand-text span {
+      margin-top: 4px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      color: #3d332b;
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a:not(.btn)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 1px;
+      background: var(--brown);
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:not(.btn):hover::after {
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+      min-height: 48px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.2px;
+      cursor: pointer;
+      transition: 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(23,18,14,.18);
+    }
+
+    .btn.light {
+      background: rgba(255,255,255,.55);
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .btn.light:hover {
+      background: var(--paper);
+    }
+
+    .hamburger {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: rgba(255,255,255,.54);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 120;
+    }
+
+    .hamburger span {
+      width: 20px;
+      height: 2px;
+      background: var(--ink);
+      transition: .25s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 78px);
+      display: grid;
+      align-items: center;
+      padding: 64px 22px 88px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(138,90,53,.16), transparent 32%),
+        radial-gradient(circle at 85% 30%, rgba(127,144,115,.18), transparent 34%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      max-width: var(--max);
+      margin: auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.03fr .97fr;
+      align-items: center;
+      gap: 56px;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--brown-dark);
+      margin-bottom: 18px;
+    }
+
+    .section-kicker::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: var(--brown);
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(52px, 8.5vw, 112px);
+      line-height: .86;
+      letter-spacing: -6px;
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+
+    h1 span {
+      display: block;
+      font-style: italic;
+      color: var(--brown);
+    }
+
+    .hero-copy {
+      max-width: 590px;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 21px);
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .hero-checks {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 620px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .hero-checks span {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,.52);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 11px 14px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #3c332b;
+    }
+
+    .hero-checks i {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(64,87,68,.12);
+      color: var(--green);
+      font-style: normal;
+      font-size: 13px;
+      flex: 0 0 auto;
+    }
+
+    .hero-media {
+      position: relative;
+      min-height: 640px;
+    }
+
+    .hero-photo-main,
+    .hero-photo-small {
+      position: absolute;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-photo-main {
+      inset: 0 0 80px 48px;
+      border-radius: 999px 999px 40px 40px;
+      background-image:
+        linear-gradient(rgba(20,14,10,.03), rgba(20,14,10,.18)),
+        url("https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1200&q=85");
+    }
+
+    .hero-photo-small {
+      left: 0;
+      bottom: 0;
+      width: 48%;
+      height: 260px;
+      border-radius: 34px;
+      border: 10px solid var(--bg);
+      background-image:
+        linear-gradient(rgba(20,14,10,.08), rgba(20,14,10,.20)),
+        url("https://images.unsplash.com/photo-1600508774634-4e11d34730e2?auto=format&fit=crop&w=900&q=85");
+    }
+
+    .rating-pill {
+      position: absolute;
+      top: 42px;
+      left: 0;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 18px 20px;
+      box-shadow: var(--soft-shadow);
+      font-family: Arial, Helvetica, sans-serif;
+      min-width: 145px;
+    }
+
+    .rating-pill strong {
+      display: block;
+      font-size: 32px;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .rating-pill span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .location-tag {
+      position: absolute;
+      right: 18px;
+      bottom: 26px;
+      background: rgba(23,18,14,.92);
+      color: var(--paper);
+      border-radius: 999px;
+      padding: 13px 17px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: var(--soft-shadow);
+    }
+
+    section {
+      padding: 96px 22px;
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: auto;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: .88fr 1.12fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .section-number {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--brown);
+      font-weight: 900;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-size: clamp(38px, 5.8vw, 78px);
+      line-height: .95;
+      letter-spacing: -4px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 760px;
+      margin-bottom: 18px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 36px;
+    }
+
+    .stat {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1;
+      color: var(--brown);
+      font-weight: 500;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 7px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .3px;
+    }
+
+    .lessons {
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .lesson-head {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 50px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+
+    .lesson-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .lesson-card {
+      min-height: 286px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 26px;
+      background: #fffdf8;
+      transition: .25s ease;
+    }
+
+    .lesson-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--soft-shadow);
+      border-color: rgba(138,90,53,.24);
+    }
+
+    .lesson-card:nth-child(even) {
+      background: #f4eadb;
+    }
+
+    .lesson-card small {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--brown);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.2px;
+    }
+
+    .lesson-card h3 {
+      font-size: 30px;
+      line-height: 1;
+      letter-spacing: -1.3px;
+      font-weight: 500;
+      margin: 26px 0 14px;
+    }
+
+    .lesson-card p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .enquire-link {
+      margin-top: 26px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--brown-dark);
+      font-size: 13px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .experience {
+      background: #efe3d3;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid rgba(23,18,14,.18);
+    }
+
+    .experience-item {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 18px;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(23,18,14,.18);
+    }
+
+    .experience-item span {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--brown);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      padding-top: 5px;
+    }
+
+    .experience-item h3 {
+      font-size: 26px;
+      line-height: 1;
+      letter-spacing: -1px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .experience-item p {
+      color: var(--muted);
+    }
+
+    .reviews {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .reviews .section-number,
+    .reviews .section-title,
+    .reviews .lead {
+      color: inherit;
+    }
+
+    .reviews .lead {
+      color: rgba(255,250,242,.72);
+    }
+
+    .reviews-wrap {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .score-card {
+      position: sticky;
+      top: 112px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+    }
+
+    .score-card strong {
+      display: block;
+      font-size: 86px;
+      line-height: 1;
+      font-weight: 500;
+    }
+
+    .score-card .stars {
+      color: #edc879;
+      letter-spacing: 4px;
+      margin: 16px 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .score-card p {
+      color: rgba(255,250,242,.72);
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .review-card {
+      background: var(--paper);
+      color: var(--ink);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .quote-mark {
+      font-size: 58px;
+      line-height: .7;
+      color: var(--brown);
+      margin-bottom: 14px;
+    }
+
+    .review-card p {
+      color: #3d332b;
+      font-size: 17px;
+    }
+
+    .review-card small {
+      display: block;
+      margin-top: 22px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    .areas {
+      background: var(--paper);
+    }
+
+    .areas-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .area-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .area-list li {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 13px 16px;
+      background: #fffdf8;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .area-list span:last-child {
+      color: var(--brown);
+    }
+
+    .faq {
+      background: var(--bg);
+    }
+
+    .faq-wrap {
+      max-width: 920px;
+      margin: auto;
+    }
+
+    .faq .section-number,
+    .faq .section-title {
+      text-align: center;
+    }
+
+    .accordion {
+      display: grid;
+      gap: 12px;
+      margin-top: 38px;
+    }
+
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--paper);
+    }
+
+    .faq-question {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 22px 24px;
+      text-align: left;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .faq-question span {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 26px;
+      color: var(--brown);
+      transition: .25s ease;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease;
+    }
+
+    .faq-answer p {
+      padding: 0 24px 24px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .faq-item.active .faq-question span {
+      transform: rotate(45deg);
+    }
+
+    .contact {
+      background: #e9d9c6;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .88fr 1.12fr;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .info-card {
+      border: 1px solid rgba(23,18,14,.14);
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,.42);
+      padding: 20px;
+    }
+
+    .info-card strong {
+      display: block;
+      margin-bottom: 7px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--brown-dark);
+    }
+
+    .info-card p,
+    .info-card a {
+      color: var(--ink);
+      font-size: 17px;
+    }
+
+    .form-card {
+      background: var(--paper);
+      border: 1px solid rgba(23,18,14,.14);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--soft-shadow);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    label {
+      display: block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--brown-dark);
+      margin-bottom: 8px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: #fffdf8;
+      padding: 15px 16px;
+      color: var(--ink);
+      outline: none;
+      transition: .2s ease;
+      margin-bottom: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: rgba(138,90,53,.52);
+      box-shadow: 0 0 0 4px rgba(138,90,53,.10);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .form-message {
+      margin-top: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      color: var(--green);
+      font-weight: 800;
+      display: none;
+    }
+
+    footer {
+      background: var(--ink);
+      color: rgba(255,250,242,.68);
+      padding: 30px 22px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .footer-inner strong {
+      color: var(--paper);
+    }
+
+    .footer-socials {
+      max-width: var(--max);
+      margin: 20px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-socials a {
+      color: rgba(255,250,242,.78);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: 850;
+      transition: 0.25s ease;
+      background: rgba(255,255,255,.03);
+    }
+
+    .footer-socials a:hover {
+      background: rgba(255,255,255,.09);
+      color: var(--paper);
+      transform: translateY(-2px);
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.3);
+      background: var(--ink);
+      color: var(--paper);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      z-index: 70;
+      box-shadow: var(--soft-shadow);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: .25s ease;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        inset: 0;
+        min-height: 100vh;
+        background: var(--bg);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%);
+        transition: .35s ease;
+        font-size: 22px;
+      }
+
+      .nav-links.open {
+        transform: translateX(0);
+      }
+
+      .nav-links .btn {
+        margin-top: 12px;
+      }
+
+      .hero-inner,
+      .split,
+      .lesson-head,
+      .experience-grid,
+      .reviews-wrap,
+      .areas-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-media {
+        min-height: 560px;
+        max-width: 640px;
+      }
+
+      .lesson-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .score-card {
+        position: static;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .navbar {
+        min-height: 70px;
+        padding: 0 18px;
+      }
+
+      .logo-image img {
+        height: 40px;
+      }
+
+      .brand-text strong {
+        font-size: 16px;
+      }
+
+      .brand-text span {
+        display: none;
+      }
+
+      .hero {
+        padding: 48px 18px 68px;
+      }
+
+      h1 {
+        font-size: clamp(48px, 15vw, 74px);
+        letter-spacing: -3.4px;
+      }
+
+      .hero-copy {
+        font-size: 17px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-checks,
+      .lesson-grid,
+      .stat-grid,
+      .review-grid,
+      .area-list,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-media {
+        min-height: 430px;
+      }
+
+      .hero-photo-main {
+        inset: 0 0 62px 28px;
+      }
+
+      .hero-photo-small {
+        width: 56%;
+        height: 190px;
+        border-width: 7px;
+      }
+
+      .rating-pill {
+        top: 22px;
+      }
+
+      .location-tag {
+        right: 0;
+        bottom: 10px;
+        font-size: 12px;
+      }
+
+      section {
+        padding: 72px 18px;
+      }
+
+      .section-title {
+        letter-spacing: -2.2px;
+      }
+
+      .experience-item {
+        grid-template-columns: 48px 1fr;
+      }
+
+      .form-card {
+        padding: 24px;
+        border-radius: 24px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-socials {
+        align-items: stretch;
+      }
+
+      .footer-socials a {
+        flex: 1;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .brand {
+        gap: 9px;
+      }
+
+      .logo-image img {
+        height: 34px;
+      }
+
+      .brand-text strong {
+        font-size: 14px;
+      }
+
+      .hero-media {
+        min-height: 360px;
+      }
+
+      .hero-photo-main {
+        left: 12px;
+      }
+
+      .hero-photo-small {
+        height: 150px;
+      }
+
+      .rating-pill {
+        padding: 14px 15px;
+        min-width: 120px;
+      }
+
+      .rating-pill strong {
+        font-size: 27px;
+      }
+
+      .lesson-card,
+      .review-card,
+      .score-card,
+      .info-card,
+      .form-card {
+        padding: 22px;
+      }
+
+      .section-title {
+        font-size: 38px;
+      }
+    }
+
+    /* Extra responsive polish for all devices */
+    @media (min-width: 1400px) {
+      :root {
+        --max: 1280px;
+      }
+
+      .hero {
+        padding-top: 84px;
+        padding-bottom: 104px;
+      }
+
+      .hero-media {
+        min-height: 680px;
+      }
+    }
+
+    @media (max-width: 1180px) {
+      .navbar,
+      .container,
+      .hero-inner,
+      .footer-inner,
+      .footer-socials {
+        max-width: 100%;
+      }
+
+      h1 {
+        font-size: clamp(50px, 7vw, 92px);
+      }
+
+      .section-title {
+        font-size: clamp(36px, 5.2vw, 66px);
+      }
+
+      .nav-links {
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .brand-text strong {
+        font-size: 16px;
+      }
+
+      .nav-links {
+        font-size: 20px;
+      }
+
+      .hero {
+        padding-top: 56px;
+      }
+
+      .hero-media {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .lesson-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .area-list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        min-height: 66px;
+      }
+
+      .logo-image img {
+        height: 36px;
+      }
+
+      .brand-text strong {
+        font-size: 13px;
+        max-width: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .hamburger {
+        width: 42px;
+        height: 42px;
+        flex: 0 0 auto;
+      }
+
+      .nav-links {
+        font-size: 19px;
+        gap: 22px;
+        padding: 80px 20px;
+      }
+
+      .nav-links .btn {
+        width: auto;
+        min-width: 190px;
+      }
+
+      .hero {
+        padding: 42px 16px 58px;
+      }
+
+      .section-kicker {
+        font-size: 11px;
+        letter-spacing: 1.1px;
+      }
+
+      .section-kicker::before {
+        width: 24px;
+      }
+
+      h1 {
+        font-size: clamp(42px, 14vw, 62px);
+        line-height: .92;
+        letter-spacing: -2.7px;
+      }
+
+      .hero-copy,
+      .lead {
+        font-size: 16px;
+      }
+
+      .hero-checks span {
+        border-radius: 16px;
+        align-items: flex-start;
+      }
+
+      .hero-media {
+        min-height: 340px;
+      }
+
+      .hero-photo-main {
+        inset: 0 0 54px 18px;
+        border-radius: 200px 200px 28px 28px;
+      }
+
+      .hero-photo-small {
+        width: 58%;
+        height: 135px;
+        border-radius: 22px;
+        border-width: 6px;
+      }
+
+      .rating-pill {
+        top: 14px;
+        left: 0;
+        padding: 12px 13px;
+        border-radius: 18px;
+        min-width: 105px;
+      }
+
+      .rating-pill strong {
+        font-size: 24px;
+      }
+
+      .location-tag {
+        max-width: 88%;
+        white-space: normal;
+        text-align: center;
+        padding: 10px 13px;
+      }
+
+      section {
+        padding: 58px 16px;
+      }
+
+      .section-title {
+        font-size: clamp(34px, 10vw, 46px);
+        line-height: 1;
+        letter-spacing: -1.8px;
+      }
+
+      .split,
+      .lesson-head,
+      .experience-grid,
+      .reviews-wrap,
+      .areas-grid,
+      .contact-grid {
+        gap: 30px;
+      }
+
+      .lesson-grid,
+      .stat-grid,
+      .area-list,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lesson-card {
+        min-height: auto;
+      }
+
+      .experience-item {
+        grid-template-columns: 38px 1fr;
+        gap: 14px;
+      }
+
+      .experience-item h3 {
+        font-size: 22px;
+      }
+
+      .faq-question {
+        font-size: 17px;
+        padding: 19px 20px;
+      }
+
+      .faq-answer p {
+        padding: 0 20px 20px;
+      }
+
+      .footer-socials {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .footer-socials a {
+        width: 100%;
+      }
+
+      .back-to-top {
+        width: 46px;
+        height: 46px;
+        right: 14px;
+        bottom: 14px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .brand-text {
+        display: none;
+      }
+
+      .logo-image img {
+        height: 34px;
+      }
+
+      h1 {
+        font-size: 39px;
+      }
+
+      .hero-media {
+        min-height: 310px;
+      }
+
+      .hero-photo-small {
+        height: 120px;
+      }
+
+      .rating-pill {
+        transform: scale(.92);
+        transform-origin: top left;
+      }
+
+      .lesson-card,
+      .review-card,
+      .score-card,
+      .info-card,
+      .form-card {
+        padding: 18px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="site-shell">
+    <div class="grain"></div>
+
+    <header class="nav-wrap">
+      <nav class="navbar">
+        <a href="#home" class="brand logo-image" aria-label="SDWA Driving School home">
+          <img src="SDWA.png" alt="SDWA Driving School Logo">
+          <span class="brand-text">
+            <strong>SDWA Driving School</strong>
+            <span>Calm London lessons</span>
+          </span>
+        </a>
+
+        <button class="hamburger" id="menuButton" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#lessons">Lessons</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#areas">Areas</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact" class="btn">Book Lesson</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="hero-inner">
+          <div class="hero-content reveal">
+            <div class="section-kicker">London Driving School</div>
+            <h1>Calm lessons. <span>Real progress.</span></h1>
+            <p class="hero-copy">
+              Patient, friendly and confidence-building driving lessons across London — for beginners, nervous learners and test-ready students.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#contact" class="btn">Book Your First Lesson</a>
+              <a href="tel:07828713939" class="btn light">Speak With Instructor</a>
+            </div>
+
+            <div class="hero-checks">
+              <span><i>✓</i>DVSA Approved Instructor</span>
+              <span><i>✓</i>High Pass Rate</span>
+              <span><i>✓</i>Manual Lessons</span>
+              <span><i>✓</i>Friendly Teaching Style</span>
+            </div>
+          </div>
+
+          <div class="hero-media reveal">
+            <div class="hero-photo-main"></div>
+            <div class="hero-photo-small"></div>
+
+            <div class="rating-pill">
+              <strong>5.0 ★</strong>
+              <span>Google rated</span>
+            </div>
+
+            <div class="location-tag">— Aldersbrook, London E11</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container split">
+          <div class="reveal">
+            <div class="section-number">About — 01</div>
+            <h2 class="section-title">Learning to drive should feel calm, not stressful.</h2>
+          </div>
+
+          <div class="reveal">
+            <p class="lead">
+              SDWA was built on one simple idea — that anyone can become a confident driver when they're taught with patience. No shouting, no rushed corrections, no pressure. Just steady, supportive guidance from someone who genuinely wants you to succeed.
+            </p>
+
+            <p class="lead">
+              Whether you've never sat behind the wheel, or you've started lessons elsewhere and lost your confidence, you'll find a warm, judgement-free space to learn at the pace that's right for you.
+            </p>
+
+            <div class="stat-grid">
+              <div class="stat">
+                <strong>10+</strong>
+                <span>Years teaching</span>
+              </div>
+              <div class="stat">
+                <strong>500+</strong>
+                <span>Learners passed</span>
+              </div>
+              <div class="stat">
+                <strong>5.0</strong>
+                <span>Google rating</span>
+              </div>
+              <div class="stat">
+                <strong>1st</strong>
+                <span>Time pass focus</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lessons" id="lessons">
+        <div class="container">
+          <div class="lesson-head">
+            <div class="reveal">
+              <div class="section-number">Lessons — 02</div>
+              <h2 class="section-title">A lesson for every stage.</h2>
+            </div>
+
+            <p class="lead reveal">
+              From your first nervous turn of the key to the morning of your practical test — each lesson is shaped to where you are, not where a syllabus says you should be.
+            </p>
+          </div>
+
+          <div class="lesson-grid">
+            <article class="lesson-card reveal">
+              <div>
+                <small>01</small>
+                <h3>Beginner Lessons</h3>
+                <p>Gentle introduction for first-time drivers — cockpit drill, controls, and your first move-off in a quiet area.</p>
+              </div>
+              <a href="#contact" class="enquire-link">Enquire →</a>
+            </article>
+
+            <article class="lesson-card reveal">
+              <div>
+                <small>02</small>
+                <h3>Intensive Courses</h3>
+                <p>Condensed, structured programmes for learners ready to pass quickly without losing depth or confidence.</p>
+              </div>
+              <a href="#contact" class="enquire-link">Enquire →</a>
+            </article>
+
+            <article class="lesson-card reveal">
+              <div>
+                <small>03</small>
+                <h3>Refresher Lessons</h3>
+                <p>For drivers returning after a break, or those who passed but never quite felt comfortable on the road.</p>
+              </div>
+              <a href="#contact" class="enquire-link">Enquire →</a>
+            </article>
+
+            <article class="lesson-card reveal">
+              <div>
+                <small>04</small>
+                <h3>Mock Tests</h3>
+                <p>Full DVSA-style practice tests with calm, honest feedback so you know exactly where you stand.</p>
+              </div>
+              <a href="#contact" class="enquire-link">Enquire →</a>
+            </article>
+
+            <article class="lesson-card reveal">
+              <div>
+                <small>05</small>
+                <h3>Motorway Driving</h3>
+                <p>Build real confidence at speed — joining, lane discipline, overtaking and exiting safely.</p>
+              </div>
+              <a href="#contact" class="enquire-link">Enquire →</a>
+            </article>
+
+            <article class="lesson-card reveal">
+              <div>
+                <small>06</small>
+                <h3>Test Preparation</h3>
+                <p>Routes, manoeuvres and examiner expectations refined in the final lessons before your test.</p>
+              </div>
+              <a href="#contact" class="enquire-link">Enquire →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="experience">
+        <div class="container experience-grid">
+          <div class="reveal">
+            <div class="section-number">The Experience — 03</div>
+            <h2 class="section-title">How lessons actually feel.</h2>
+            <p class="lead">
+              Calm instruction does not mean slow progress. It means mistakes become useful, skills become clear, and confidence builds without panic.
+            </p>
+          </div>
+
+          <div class="experience-list">
+            <article class="experience-item reveal">
+              <span>01</span>
+              <div>
+                <h3>Point-by-point guidance</h3>
+                <p>Every skill broken down into small, achievable pieces — no information overload.</p>
+              </div>
+            </article>
+
+            <article class="experience-item reveal">
+              <span>02</span>
+              <div>
+                <h3>Calm corrections</h3>
+                <p>Mistakes are part of learning. They're addressed gently, without making you feel small.</p>
+              </div>
+            </article>
+
+            <article class="experience-item reveal">
+              <span>03</span>
+              <div>
+                <h3>Structured learning</h3>
+                <p>A clear plan from lesson one to test day, so you always know what comes next.</p>
+              </div>
+            </article>
+
+            <article class="experience-item reveal">
+              <span>04</span>
+              <div>
+                <h3>Flexible pacing</h3>
+                <p>Some weeks you'll fly. Others you'll need to slow down. Both are absolutely fine.</p>
+              </div>
+            </article>
+
+            <article class="experience-item reveal">
+              <span>05</span>
+              <div>
+                <h3>Real-world confidence</h3>
+                <p>Lessons that prepare you for life after the test, not just the test itself.</p>
+              </div>
+            </article>
+
+            <article class="experience-item reveal">
+              <span>06</span>
+              <div>
+                <h3>First-time pass focus</h3>
+                <p>Test routes, manoeuvres and examiner habits — practised until they feel natural.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews" id="reviews">
+        <div class="container reviews-wrap">
+          <div class="score-card reveal">
+            <div class="section-number">Reviews — 04</div>
+            <h2 class="section-title">Words from learners who passed.</h2>
+            <strong>5.0</strong>
+            <div class="stars">★★★★★</div>
+            <p>Google rated by learners who wanted patience, structure and calm progress.</p>
+          </div>
+
+          <div class="review-grid">
+            <article class="review-card reveal">
+              <div>
+                <div class="quote-mark">“</div>
+                <p>I passed first time thanks to the calm teaching style. Every lesson felt comfortable and never rushed.</p>
+              </div>
+              <small>Amira K. · Passed · Goodmayes</small>
+            </article>
+
+            <article class="review-card reveal">
+              <div>
+                <div class="quote-mark">“</div>
+                <p>I was a really nervous learner and put off lessons for years. Honestly the friendliest, most patient instructor I could have asked for.</p>
+              </div>
+              <small>Daniel R. · Passed · Ilford</small>
+            </article>
+
+            <article class="review-card reveal">
+              <div>
+                <div class="quote-mark">“</div>
+                <p>More than an instructor — genuinely supportive throughout. I actually looked forward to my lessons each week.</p>
+              </div>
+              <small>Priya S. · Passed · Stratford</small>
+            </article>
+
+            <article class="review-card reveal">
+              <div>
+                <div class="quote-mark">“</div>
+                <p>Clear explanations, calm corrections and a proper structure. Felt ready for the test long before the day.</p>
+              </div>
+              <small>Tomasz W. · Passed · Barking</small>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="areas" id="areas">
+        <div class="container areas-grid">
+          <div class="reveal">
+            <div class="section-number">Areas — 05</div>
+            <h2 class="section-title">Teaching across East London & beyond.</h2>
+            <p class="lead">
+              Based in Aldersbrook, covering test centres and routes throughout East London and the surrounding boroughs.
+            </p>
+          </div>
+
+          <ul class="area-list reveal">
+            <li><span>London</span><span>01</span></li>
+            <li><span>Goodmayes</span><span>02</span></li>
+            <li><span>East London</span><span>03</span></li>
+            <li><span>Ilford</span><span>04</span></li>
+            <li><span>Aldersbrook</span><span>05</span></li>
+            <li><span>Stratford</span><span>06</span></li>
+            <li><span>Barking</span><span>07</span></li>
+            <li><span>Wanstead</span><span>08</span></li>
+            <li><span>Forest Gate</span><span>09</span></li>
+            <li><span>Manor Park</span><span>10</span></li>
+            <li><span>Romford</span><span>11</span></li>
+            <li><span>Leytonstone</span><span>12</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="faq">
+        <div class="faq-wrap">
+          <div class="section-number reveal">FAQ — 06</div>
+          <h2 class="section-title reveal">Questions, answered.</h2>
+
+          <div class="accordion">
+            <div class="faq-item reveal active">
+              <button class="faq-question" type="button">
+                How many lessons will I need?
+                <span>+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Most learners need somewhere between 30 and 45 hours of professional instruction, but every learner is different. We'll review your progress regularly and be honest about where you stand.</p>
+              </div>
+            </div>
+
+            <div class="faq-item reveal">
+              <button class="faq-question" type="button">
+                Do you teach complete beginners?
+                <span>+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Absolutely — beginners are one of our favourite groups to teach. Your first lesson is taken in a quiet area, at a pace that feels comfortable from the moment you sit down.</p>
+              </div>
+            </div>
+
+            <div class="faq-item reveal">
+              <button class="faq-question" type="button">
+                Manual or automatic?
+                <span>+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Lessons are taught in a manual car, which gives you the freedom to drive any vehicle once you've passed.</p>
+              </div>
+            </div>
+
+            <div class="faq-item reveal">
+              <button class="faq-question" type="button">
+                I'm a nervous driver — can you help?
+                <span>+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Yes, and you're far from alone. Many learners come specifically because they have felt rushed or judged elsewhere. We move at your pace, full stop.</p>
+              </div>
+            </div>
+
+            <div class="faq-item reveal">
+              <button class="faq-question" type="button">
+                Do you offer intensive courses?
+                <span>+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Yes — short, focused programmes are available subject to availability. Get in touch with your ideal timeframe and we'll put a plan together.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="container contact-grid">
+          <div class="reveal">
+            <div class="section-number">Contact — 07</div>
+            <h2 class="section-title">Start your first lesson.</h2>
+            <p class="lead">
+              Drop a message below, or pick up the phone — you'll usually get a reply the same day.
+            </p>
+
+            <div class="contact-info">
+              <div class="info-card">
+                <strong>Phone</strong>
+                <a href="tel:07828713939">07828 713939</a>
+              </div>
+
+              <div class="info-card">
+                <strong>WhatsApp</strong>
+                <a href="https://wa.me/447828713939" target="_blank" rel="noopener">Message on WhatsApp →</a>
+              </div>
+
+              <div class="info-card">
+                <strong>Studio</strong>
+                <p>156 Queenswood Gardens,<br>Aldersbrook, London E11 3SG</p>
+              </div>
+
+              <div class="info-card">
+                <strong>Hours</strong>
+                <p>Mon — Fri · 07:00 – 20:00<br>Sat · 08:00 – 18:00<br>Sun · By appointment</p>
+              </div>
+            </div>
+          </div>
+
+          <form class="form-card reveal" id="lessonForm">
+            <div class="form-grid">
+              <div>
+                <label for="name">Your name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required />
+              </div>
+
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="Your phone number" required />
+              </div>
+
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" />
+              </div>
+
+              <div>
+                <label for="area">Area in London</label>
+                <input id="area" name="area" type="text" placeholder="e.g. Ilford" />
+              </div>
+
+              <div class="full">
+                <label for="message">Tell us a little about your driving so far</label>
+                <textarea id="message" name="message" placeholder="Beginner, nervous learner, test coming soon..."></textarea>
+              </div>
+            </div>
+
+            <button class="btn" type="submit">Send enquiry</button>
+            <p class="form-message" id="formMessage">Thanks — your enquiry has been prepared. Connect this form to Netlify, Formspree, or your backend to receive submissions.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>© 2026 <strong>SDWA Driving School</strong> — sdwa.co.uk</span>
+        <span>Calm · Patient · London</span>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/sdwa_driving_school/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/people/SDWA/61573610335419/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.youtube.com/@Sdwa_driving_school" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  </div>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+    const body = document.body;
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuButton.classList.toggle("active", isOpen);
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      body.classList.toggle("lock", isOpen);
+    });
+
+    document.querySelectorAll("#navLinks a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.classList.remove("active");
+        menuButton.setAttribute("aria-expanded", "false");
+        body.classList.remove("lock");
+      });
+    });
+
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    function setFaqHeight(item) {
+      const answer = item.querySelector(".faq-answer");
+      if (item.classList.contains("active")) {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      } else {
+        answer.style.maxHeight = null;
+      }
+    }
+
+    faqItems.forEach((item) => {
+      const button = item.querySelector(".faq-question");
+      button.addEventListener("click", () => {
+        const wasActive = item.classList.contains("active");
+
+        faqItems.forEach((faq) => {
+          faq.classList.remove("active");
+          setFaqHeight(faq);
+        });
+
+        if (!wasActive) {
+          item.classList.add("active");
+          setFaqHeight(item);
+        }
+      });
+
+      setFaqHeight(item);
+    });
+
+    window.addEventListener("resize", () => {
+      faqItems.forEach(setFaqHeight);
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    revealElements.forEach((element) => observer.observe(element));
+
+    const backToTop = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 700) {
+        backToTop.classList.add("show");
+      } else {
+        backToTop.classList.remove("show");
+      }
+    });
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    const lessonForm = document.getElementById("lessonForm");
+    const formMessage = document.getElementById("formMessage");
+
+    lessonForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      formMessage.style.display = "block";
+      lessonForm.reset();
+    });
+  </script>
+</body>
+</html>
